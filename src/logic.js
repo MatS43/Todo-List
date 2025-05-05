@@ -6,3 +6,9 @@ export class todo {
         this.priority = priority;
     }
 }
+export class project {
+    constructor(title, description,){
+        this.title = title;
+        this.description = description;
+    }
+}
