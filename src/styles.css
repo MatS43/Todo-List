@@ -2,10 +2,11 @@
     background-color: #00ADB5;
     margin: 0;
     color: #393E46;
-    font-family: 'Courier New', Courier, monospace;
 }
-h1{
+
+h1,h2{
     height: 10vh;
+    font-family: 'Courier New', Courier, monospace;
 }
 body{
     margin:0;
@@ -24,7 +25,17 @@ div button{
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
 }
-.add{
+.addTodo{
     justify-self: flex-start;
 }
-
+form > label, form > input, form > fieldset, form > button{
+    margin: 5px;
+} 
+form, fieldset{
+    display: flex;
+    flex-direction: column;
+}
+button[data-modal-todo-close],button[data-modal-project-close]{
+    display: flex;
+    flex-grow: 1;
+}

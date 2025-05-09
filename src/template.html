@@ -10,10 +10,46 @@
     <div class="panel">
         <div class="projects">
             <h2>Projects</h2>
-            <button>Create Project</button>
+            <button class="addProject">Create Project</button>
+            <dialog data-modal-project>
+                <form action="post">
+                    <label for="projectName">Title</label>
+                    <input type="text" id="projectName">
+                    <label for="projectdescription">Description</label>
+                    <textarea name="projectdescription"></textarea> 
+                    <button type="submit">Submit</button>
+                    <button data-modal-project-close >Close</button>  
+                </form>
+            </dialog>
+
         </div>
         <div class="todos">
-            <button class="add">Add todo</button>
+            <button class="addTodo">Add todo</button>
+            <dialog data-modal-todo>
+                <form method="post">
+                    <label for="Todotitle">Title</label>
+                    <input id="Todotitle" type="text">
+                    <label for="Tododescription">Description</label>
+                    <input id="Tododescription" type="text">
+                    <label for="Tododate">Date</label>
+                    <input id="Tododate" type="date">
+                    <fieldset>
+                        <label for="Todoradio">Priority</label>
+                        <label for="highPriority">High
+                            <input type="radio" name="Todoradio" id="highPriority" value="High">
+                        </label>
+                        <label for="mediumPriority">Medium
+                            <input type="radio" name="Todoradio" id="mediumPriority" value="Medium">
+                        </label>
+                        <label for="lowPriority">Low
+                            <input type="radio" name="Todoradio" id="lowPriority" value="Low">
+                        </label>
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                    <button data-modal-todo-close>Close</button> 
+                </form>
+               
+            </dialog>
         </div>
         
     </div>
