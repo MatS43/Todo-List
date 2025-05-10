@@ -1,8 +1,8 @@
 import "./styles.css";
-import {todo} from "./logic.js";
-import {project} from "./logic.js";
+import {todo,project,createTodo,todoArray} from "./logic.js";
 
-let todoArray = [];
+
+
 let addTodo = document.querySelector(".addTodo");
 const modalTodo = document.querySelector("[data-modal-todo]")
 const closeModalTodo = document.querySelector("[data-modal-todo-close]")
@@ -11,8 +11,6 @@ const modalProject = document.querySelector("[data-modal-project]")
 const closeModalProject = document.querySelector("[data-modal-project-close]")
 addTodo.addEventListener("click", ()=>{
     modalTodo.showModal()
-    let newTodo = new todo("title", "description", "dueDate", "priority");
-    todoArray.push(newTodo);
 })
 closeModalTodo.addEventListener("click", ()=>{
     event.preventDefault()
@@ -24,4 +22,15 @@ addProject.addEventListener("click", ()=>{
 closeModalProject.addEventListener("click", ()=>{
     event.preventDefault()
     modalProject.close();
+})
+const submitTodo =document.querySelector("#submitTodo");
+submitTodo.addEventListener("click",()=>{
+    event.preventDefault();
+    let Todotitle=document.querySelector("#Todotitle");
+    let Tododescription= document.querySelector("#Tododescription");
+    let Tododate=document.querySelector("#Tododate");
+    let Todoradio=document.querySelector('input[name="Todoradio"]:checked');
+    createTodo(Todotitle.value,Tododescription.value,Tododate.value,Todoradio.value);
+    console.log(todoArray);
+    modalTodo.close();
 })

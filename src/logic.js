@@ -12,3 +12,9 @@ export class project {
         this.description = description;
     }
 }
+export let todoArray = [];
+export function createTodo(title,description,dueDate,priority){
+    let newTodo = new todo(title, description, dueDate, priority);
+    todoArray.push(newTodo);
+}
+
